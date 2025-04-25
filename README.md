@@ -35,6 +35,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/This project was deve
 ## 💻 Projeto/Project
 
 Pt-br: O Devlinks é um agregador de links para utilizar como cartão de visitas na web.
+
 Eng: Devlinks is a link aggregator to use as a digital business card on the web.
 
 ## 🔖 Layout
@@ -46,9 +47,11 @@ Eng: You can view the project layout through [DESSE LINK](https://www.figma.com/
 ## :memo: Licença/License
 
 Pt-Br:Esse projeto está sob a licença MIT.
+
 Eng:This project is licensed under the MIT License.
 
 ---
 
 Pt-Br:Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+
 Eng:Made with ♥ by ocketseat :wave: [Join our community!](https://discord.gg/rocketseat)
