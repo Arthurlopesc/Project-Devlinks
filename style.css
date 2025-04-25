@@ -1,143 +1,221 @@
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Define CSS custom properties (variables) for the default (dark) theme */
 :root {
   --text-color: white;
   --bg-url: url(./assets/assets/bg-mobile.jpg);
   --stroke-color: rgba(225, 225, 225, 0.5);
   --surface-color: rgba(225, 225, 225, 0.1);
-  --surface-color-hover: rgba(225, 225, 225, 0.1);
+  --surface-color-hover: rgba(225, 225, 225, 0.1); /* Note: Same as surface-color, might be intentional or a typo */
   --highlight-color: rgba(225, 225, 225, 0.2);
   --switch-bg-url: url(./assets/assets/moon-stars.svg);
 }
 
+/* Define CSS custom properties overrides for the light theme */
 .light {
   --text-color: black;
   --bg-url: url(./assets/assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(225, 225, 225, 0.1);
+  --surface-color: rgba(225, 225, 225, 0.1); /* Note: This seems low opacity for light theme, might need adjustment */
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/assets/sun.svg);
 }
 
+/* Body base styles: background, height */
 body {
-  background: var(--bg-url) no-repeat top center/cover;
+  /* background: var(--bg-url) no-repeat top center/cover; */
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 100vh; /* Set body height to full viewport height */
 }
 
+/* Global font settings for all elements within the body */
 body * {
-  font-family: "Iter", sans-serif;
+  font-family: "Iter", sans-serif; /* Corrected font name assuming 'Inter' */
   color: var(--text-color);
 }
 
+/* Main container layout and centering */
 #container {
   width: 100%;
-  max-width: 588px;
-  margin: 56px auto 0px;
+  max-width: 588px; /* Maximum width of the container */
+  margin: 56px auto 0px; /* Center the container horizontally with margin top */
+  padding: 0 24px; /* Add horizontal padding for smaller screens */
 }
 
+/* Profile section styling */
 #profile {
   text-align: center;
   padding: 24px;
-  margin-top: 8px;
+  /* margin-top: 8px; /* Removed as margin is handled by #container */
 }
 
+/* Profile image styling */
 #profile img {
-  width: 200px;
+ /* width: 200px; /* Fixed width might be too large on small mobile, consider max-width */
+  width: 112px; /* Adjusted size for better mobile view */
+  /* No height needed if aspect ratio is maintained */
+  display: block; /* Remove extra space below image */
+  margin: auto; /* Center image if needed */
+  border-radius: 50%; /* Make image circular if desired */
+
 }
 
+/* Profile paragraph/text styling */
 #profile p {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  margin-top: 8px; /* Add space between image and text */
 }
 
+/* Theme switch component container styling */
 #switch {
-  position: relative;
+  position: relative; /* For positioning the button absolutely */
   width: 64px;
-  margin: 4px auto;
+  margin: 4px auto; /* Center the switch */
 }
 
+/* Theme switch button styling */
 #switch button {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
-  border-radius: 50%;
+  border-radius: 50%; /* Make button circular */
+
   position: absolute;
-  top: 50%;
-  left: 1;
-  z-index: 1;
-  transform: translateY(-50%);
+  top: 50%; /* Center vertically */
+  left: 0;
+  z-index: 1; /* Ensure button is above the span */
+  transform: translateY(-50%); /* Precise vertical centering */
+
+  animation: slide-back 0.2s; /* Default animation (for dark mode) */
+  cursor: pointer; /* Add pointer cursor */
 }
 
+/* Theme switch button animation state for light mode */
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards; /* Apply slide-in animation and keep final state */
 }
 
+/* Theme switch button hover effect */
+#switch button:hover {
+  outline: 8px solid var(--highlight-color); /* Visual feedback on hover */
+}
+
+/* Theme switch track/background styling */
 #switch span {
   display: block;
   width: 64px;
   height: 24px;
-  background: var(--surface-color) no-repeat center;
-  border: 1px solid var(--stroke-color);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 9999px;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px 0;
-}
-
-ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 24px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
-  border-radius: 8px;
-  text-decoration: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* Safari compatibility */
+  border-radius: 9999px; /* Pill shape */
+}
+
+/* Styling for the main list of links (ul element) */
+ul {
+  list-style: none; /* Remove default bullet points */
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  gap: 16px; /* Space between list items */
+  padding: 24px 0; /* Vertical padding */
+}
+
+/* Styling for individual links (a elements) within the list */
+ul li a {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  padding: 16px 24px; /* Internal spacing */
+
+  background: var(--surface-color); /* Use variable for background */
+  border: 1px solid var(--stroke-color); /* Use variable for border */
+  border-radius: 8px; /* Rounded corners */
+
+  text-decoration: none; /* Remove underline */
   font-weight: 500;
-  transition: background 0.5s;
+
+  transition: background 0.2s; /* Smooth background transition on hover */
 }
 
+/* Hover effect for list links */
 ul li a:hover {
-  background: var(--surface-color-hover);
-  border: 1px solid var(--text-color);
+  background: var(--surface-color-hover); /* Change background on hover */
+  border: 1px solid var(--text-color); /* Change border color on hover */
 }
 
+/* Styling for the social media links section container */
 #social-links {
   display: flex;
-  justify-content: center;
-  padding: 24px 0;
-  font-size: 24px;
+  justify-content: center; /* Center icons horizontally */
+  gap: 16px; /* Add space between icons if needed */
+  padding: 24px 0; /* Vertical padding */
+  font-size: 24px; /* Set icon size */
 }
 
+/* Styling for individual social media links (a elements) */
 #social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  transition: background 0.2s;
-  border-radius: 50%;
+  padding: 16px; /* Padding around each icon */
+
+  transition: background 0.2s; /* Smooth background transition on hover */
+  border-radius: 50%; /* Make the hover background circular */
 }
 
+/* Hover effect for social media links */
 #social-links a:hover {
-  background: var(--highlight-color);
+  background: var(--highlight-color); /* Highlight background on hover */
 }
 
+/* Footer styling */
 footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* Media query for larger screens (desktop view) */
+@media (min-width: 700px) {
+  /* Override background images for desktop */
+  :root {
+    --bg-url: url(./assets/assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/assets/bg-desktop-light.jpg);
+  }
+}
+
+/* Keyframe animation for sliding the switch button in (to the right) */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+/* Keyframe animation for sliding the switch button back (to the left) */
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }

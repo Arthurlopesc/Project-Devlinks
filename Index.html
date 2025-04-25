@@ -13,61 +13,94 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- Main container div wrapping all visible content -->
     <div id="container">
+      <!-- Section displaying user profile information -->
       <div id="profile">
+        <!-- User's profile picture. Alt text describes the image for accessibility -->
         <img
           src="./assets/assets/Avatar.png"
           alt="Foto de homem branco, utilizando oculos e camisa preta,barba e fundo amarelo"
         />
+        <!-- User's handle or name -->
         <p>@Arthurlopesc</p>
       </div>
+
+      <!-- Container for the theme toggle switch. Calls toggleMode() function on click -->
       <div id="switch" onclick="toggleMode()">
+        <!-- The interactive button element of the switch -->
         <button></button>
+        <!-- An empty span, likely used for styling the visual track/background of the switch -->
         <span></span>
       </div>
+
+      <!-- Unordered list containing main navigation or action links -->
       <ul>
         <li>
+          <!-- Link item -->
           <a href="#">Inscrever-se na jornada </a>
         </li>
         <li>
+          <!-- Link item -->
           <a href="#">Baixe meu E-book</a>
         </li>
         <li>
+          <!-- Link item -->
           <a href="#">Veja meu portifólio</a>
         </li>
         <li>
+          <!-- Link item -->
           <a href="#">Conheça meu curso</a>
         </li>
       </ul>
+
+      <!-- Section containing links (with icons) to social media profiles -->
       <div id="social-links">
+        <!-- Link to GitHub profile, opens in a new tab -->
         <a href="https://github.com/Arthurlopesc" target="_blank">
-          <ion-icon name="logo-github"></ion-icon
-        ></a>
+          <!-- GitHub icon using Ionicon library -->
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
 
+        <!-- Link to Instagram profile, opens in a new tab -->
         <a href="https://instagram.com/" target="_blank">
-          <ion-icon name="logo-instagram"></ion-icon
-        ></a>
+          <!-- Instagram icon using Ionicon library -->
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
 
+        <!-- Link to YouTube profile, opens in a new tab -->
         <a href="https://youtube.com/" target="_blank">
-          <ion-icon name="logo-youtube"></ion-icon
-        ></a>
+          <!-- YouTube icon using Ionicon library -->
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+
+        <!-- Link to LinkedIn profile, opens in a new tab -->
         <a href="www.linkedin.com/in/arthur-lopes-457351340" target="_blank">
-          <ion-icon name="logo-linkedin"></ion-icon
-        ></a>
+          <!-- LinkedIn icon using Ionicon library -->
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
       </div>
+
+      <!-- Footer section of the page -->
       <footer>
         Feito em parceria com a
+        <!-- Link to Rocketseat, opens in a new tab -->
         <a href="https://www.rocketseat.com.br/" target="_blank">Rocketseat</a>
       </footer>
     </div>
+
+    <!-- Script to load the Ionicons library (ES Module version for modern browsers) -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
+    <!-- Script to load the Ionicons library (nomodule version for older browsers) -->
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- Script to load the custom JavaScript file (contains functions like toggleMode) -->
     <script src="./script.js"></script>
   </body>
 </html>
