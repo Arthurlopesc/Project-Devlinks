@@ -46,12 +46,12 @@ Eng: You can view the project layout through [DESSE LINK](https://www.figma.com/
 
 ## :memo: Licença/License
 
-Pt-Br:Esse projeto está sob a licença MIT.
+Pt-Br: Esse projeto está sob a licença MIT.
 
-Eng:This project is licensed under the MIT License.
+Eng: This project is licensed under the MIT License.
 
 ---
 
-Pt-Br:Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+Pt-Br: Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
 
-Eng:Made with ♥ by ocketseat :wave: [Join our community!](https://discord.gg/rocketseat)
+Eng: Made with ♥ by Rocketseat :wave: [Join our community!](https://discord.gg/rocketseat)
